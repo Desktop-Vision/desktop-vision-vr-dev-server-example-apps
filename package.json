@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "A collection of example apps built with Desktop Vision VR Dev Server",
   "scripts": {
-    "build": "rm -rf dist && mkdir dist && hbs --data ./pages.json ./index.hbs --output ./dist/ && mkdir dist/gesture-robot && cd gesture-robot && npm i && npm run build && cp -r public/* ../dist/gesture-robot",
-    "test": "npm run build && http-server dist"
+    "build:basic": "mkdir dist/basic && cd basic && npm i && npm run build && cp -r public/* ../dist/basic",
+    "build:robot": "mkdir dist/gesture-robot && cd gesture-robot && npm i && npm run build && cp -r public/* ../dist/gesture-robot",
+    "build:examples": "npm run build:robot && npm run build:basic",
+    "build": "rm -rf dist && mkdir dist && hbs --data ./pages.json ./index.hbs --output ./dist/ && npm run build:examples",
+    "test": "npm run build && http-server dist",
+    "new": "npx tiged Desktop-Vision/desktop-vision-vr-dev-server"
   },
   "author": "Vali Ventures LLC",
   "license": "ISC",

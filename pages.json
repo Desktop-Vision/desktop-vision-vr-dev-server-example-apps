@@ -1,6 +1,10 @@
 {
     "pages": [
         {
+            "title": "Basic",
+            "path": "/basic"
+        },
+        {
             "title": "Gesture Controlled Robot",
             "path": "/gesture-robot"
         }
