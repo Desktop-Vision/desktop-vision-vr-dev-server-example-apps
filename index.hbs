@@ -17,6 +17,19 @@
         --color-grey: #ccc;
         --color-darkGrey: #777;
       }
+
+      img {
+        width: 100$;
+        max-width: 300px;
+      }
+      ul {
+        list-style: none;
+      }
+      .flex {
+        display: flex;
+        flex-direction: column;
+        margin: 5vh auto;
+      }
     </style>
   </head>
   <body class="dark">
@@ -30,11 +43,18 @@
     </nav>
     <div class="container">
       <div class="row">
-        <div class="col">
-          <h2>VR Dev Server Example Apps</h2>
+        <div class="col text-center">
+          <h2><a href="https://github.com/Desktop-Vision/desktop-vision-vr-dev-server" target="__blank">VR Dev Server</a></h2>
+          <h2>Example Apps</h2>
           <ul>
             {{#each pages}}
-              <li><a href="{{this.path}}">{{this.title}}</a></li>
+              <li class="flex">
+                <a href="{{this.path}}" class="flex">
+                  <img src="{{this.thumbnail}}" alt="{{this.title}}">
+                </a>
+                <a href="{{this.path}}">{{this.title}}</a>
+                <a href="https://github.com/Desktop-Vision/desktop-vision-vr-dev-server-example-apps/tree/main{{path}}" target="__blank">Source Code</a>
+              </li>
             {{/each}}
           </ul>
         </div>

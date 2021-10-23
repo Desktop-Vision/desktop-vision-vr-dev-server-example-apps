@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "A collection of example apps built with Desktop Vision VR Dev Server",
   "scripts": {
-    "build:basic": "mkdir dist/basic && cd basic && npm i && npm run build && cp -r public/* ../dist/basic",
-    "build:robot": "mkdir dist/gesture-robot && cd gesture-robot && npm i && npm run build && cp -r public/* ../dist/gesture-robot",
+    "build:basic": "cd dist && mkdir basic && cd ../basic && npm i && npm run build && cp -r public/* ../dist/basic",
+    "build:robot": "cd dist && mkdir gesture-robot && cd ../gesture-robot && npm i && npm run build && cp -r public/* ../dist/gesture-robot",
     "build:examples": "npm run build:robot && npm run build:basic",
-    "build": "rm -rf dist && mkdir dist && hbs --data ./pages.json ./index.hbs --output ./dist/ && npm run build:examples",
+    "build:index": "hbs --data ./pages.json ./index.hbs --output ./dist/",
+    "build:readme": "rm -f READme.md && hbs --data ./pages.json ./README.hbs --output ./ --extension md",
+    "test:index": "npm run build:index && http-server dist",
+    "build": "rm -rf dist && mkdir dist && cp -r assets dist && npm run build:index && npm run build:readme && npm run build:examples",
     "test": "npm run build && http-server dist",
     "new": "npx tiged Desktop-Vision/desktop-vision-vr-dev-server"
   },

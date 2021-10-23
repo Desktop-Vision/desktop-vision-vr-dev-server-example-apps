@@ -2,11 +2,13 @@
     "pages": [
         {
             "title": "Basic",
-            "path": "/basic"
+            "path": "/basic",
+            "thumbnail": "/assets/basic.png"
         },
         {
             "title": "Gesture Controlled Robot",
-            "path": "/gesture-robot"
+            "path": "/gesture-robot",
+            "thumbnail": "/assets/robot.png"
         }
     ]
 }
