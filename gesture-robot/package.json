@@ -1,0 +1,23 @@
+{
+  "name": "gesture-robot",
+  "version": "1.0.0",
+  "description": "A gesture controlled robot.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-cli serve",
+    "build": "webpack --config prod.config.js"
+  },
+  "author": "Vali Ventures LLC",
+  "license": "ISC",
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "ngrok": "^4.2.2",
+    "webpack": "^5.59.1",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.3.1"
+  },
+  "dependencies": {
+    "handy.js": "git+https://github.com/dbradleyfl/handy.js.git",
+    "three": "^0.133.1"
+  }
+}

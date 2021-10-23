@@ -1,0 +1,10 @@
+{
+  "name": "desktop-vision-vr-dev-server-example-apps",
+  "version": "1.0.0",
+  "description": "A collection of example apps built with Desktop Vision VR Dev Server",
+  "scripts": {
+    "build": "rm -rf dist && mkdir dist && cp index.html dist && mkdir dist/gesture-robot && cd gesture-robot && npm i && npm run build && cp -r public/* ../dist/gesture-robot"
+  },
+  "author": "Vali Ventures LLC",
+  "license": "ISC"
+}
